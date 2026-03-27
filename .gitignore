@@ -1,0 +1,40 @@
+# Виртуальное окружение
+venv/
+.venv/
+env/
+.env/
+
+# Конфиги с токенами (ВАЖНО!)
+config.py
+secret.py
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.python
+
+# Логи
+*.log
+bot.log
+
+# Временные файлы
+*.tmp
+*.mp4
+*.wav
+*.mp3
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Системные
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Файлы отладки
+*.pdb

@@ -1,0 +1,9 @@
+vk-api
+gigachat
+requests
+python-dotenv
+openai-whisper
+ffmpeg-python
+librosa
+pydub
+numpy
