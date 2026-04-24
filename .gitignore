@@ -38,3 +38,7 @@ desktop.ini
 
 # Файлы отладки
 *.pdb
+
+# PDF
+reports/
+*.pdf
