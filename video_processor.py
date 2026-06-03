@@ -7,6 +7,7 @@
 """
 
 import os
+import sys
 import requests
 import whisper
 import librosa
@@ -15,6 +16,11 @@ import tempfile
 import subprocess
 import logging
 from urllib.parse import urlparse
+
+# ====== ВАЖНО: добавляем папку проекта в системный PATH, чтобы ffmpeg.exe был виден ======
+ffmpeg_dir = os.path.dirname(os.path.abspath(__file__))
+if ffmpeg_dir not in os.environ["PATH"]:
+    os.environ["PATH"] = ffmpeg_dir + os.pathsep + os.environ["PATH"]
 
 class VideoProcessor:
     def __init__(self):
@@ -57,6 +63,7 @@ class VideoProcessor:
 
         audio_path = media_path.rsplit('.', 1)[0] + '.wav'
 
+        # Теперь ffmpeg доступен по имени, т.к. папка с ним уже в PATH
         cmd = [
             'ffmpeg', '-i', media_path,
             '-acodec', 'pcm_s16le',
